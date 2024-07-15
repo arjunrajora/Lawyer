@@ -7,7 +7,7 @@ export default function Herder() {
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
-                    <h3 className="logo"><a href="/">Lawyer</a></h3>
+                    <h3 className="logo"><Link href="/">Lawyer</Link></h3>
                 </div>
                 <div className="col-md-9">
                     <div className="nav">
