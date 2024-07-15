@@ -1,8 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 export default function home() {
+    const slides = [
+        {
+          image: '/assets/images/slider/1.jpg',
+          captionTitle: 'Our Attorneys Always Provide The Excellent Service',
+          captionText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut',
+          captionImage: '/assets/images/slider/1.png',
+        },
+        {
+          image: '/assets/images/slider/3.jpg',
+          captionTitle: 'Our Attorneys Always Provide The Excellent Service',
+          captionText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut',
+          captionImage: '/assets/images/slider/3.png',
+        },
+        {
+          image: '/assets/images/slider/2.jpg',
+          captionTitle: 'Our Attorneys Always Provide The Excellent Service',
+          captionText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut',
+          captionImage: '/assets/images/slider/2.png',
+        },
+      ];
+    
+      const [currentIndex, setCurrentIndex] = useState(0);
+    
+      const prevSlide = () => {
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+      };
+    
+      const nextSlide = () => {
+        const isLastSlide = currentIndex === slides.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+      };
   return (
-    <div>  <section className="slider">
+    <div> 
+         {/* <section className="slider">
     <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -87,8 +122,49 @@ export default function home() {
         <span className="sr-only">Next</span>
       </a>
     </div>
-</section>
+</section> */}
+<section className="slider">
 
+<div id="carouselExampleCaptions" className=" relative carousel slide" data-ride="carousel">
+      <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
+        
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <img
+              src={slide.image}
+              
+              className="block w-full h-full object-cover d-block w-100"
+              alt={`Slide ${index + 1}`}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50  items-center justify-center">
+              <div className="container mx-auto text-white">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="p-4">
+                    <h2 className="text-2xl md:text-4xl font-bold">{slide.captionTitle}</h2>
+                    <p className="mt-4">{slide.captionText}</p>
+                    <a href="#" className="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Contact us</a>
+                  </div>
+                  <div className="hidden md:block">
+                    <img src={slide.captionImage} alt="" className="w-full h-auto"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-r"
+      >
+        &#9664;
+      </button>
+      </div>
+    </section>
 <section className="_po_jy_fr">
     <div className="container">
         <div className="row">
