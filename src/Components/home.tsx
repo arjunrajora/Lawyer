@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-export default function home() {
+export default function Home() {
     const slides = [
         {
           image: '/assets/images/slider/1.jpg',
