@@ -163,6 +163,13 @@ export default function home() {
       >
         &#9664;
       </button>
+      
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-r"
+      >
+        &#9664;
+      </button>
       </div>
     </section>
 <section className="_po_jy_fr">
