@@ -37,7 +37,7 @@ export default function Home() {
       };
   return (
     <div> 
-         {/* <section className="slider">
+         <section className="slider">
     <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -122,8 +122,8 @@ export default function Home() {
         <span className="sr-only">Next</span>
       </a>
     </div>
-</section> */}
-<section className="slider">
+</section>
+{/* <section className="slider">
 
 <div id="carouselExampleCaptions" className=" relative carousel slide" data-ride="carousel">
       <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
@@ -171,7 +171,7 @@ export default function Home() {
         &#9664;
       </button>
       </div>
-    </section>
+    </section> */}
 <section className="_po_jy_fr">
     <div className="container">
         <div className="row">

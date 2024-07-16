@@ -7,6 +7,8 @@ export default function about() {
         <div className="container">
             <div className="row">
                 <div className="col-12">
+
+                    
                     <div className="head-se-01">
                        <h3>ABOUT US</h3>
                        <ol>
